@@ -1,0 +1,2 @@
+rootProject.name='UtopicaCities'
+include ':app'

@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Created By vpnhan at 10/4/2020.
+  -->
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="com.estrouge.test.utopicacities.utils.NumberFormatUtils" />
+
+        <variable
+            name="itemViewModel"
+            type="com.estrouge.test.utopicacities.viewmodel.home.listcities.CityItemViewModel" />
+
+        <variable
+            name="holder"
+            type="com.estrouge.test.utopicacities.ui.home.listcities.CitiesAdapter.CityHolder" />
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:baselineAligned="false"
+        android:orientation="horizontal"
+        android:paddingStart="@dimen/_1sdp"
+        android:paddingTop="@dimen/_2sdp"
+        android:paddingEnd="@dimen/_1sdp"
+        android:paddingBottom="@dimen/_2sdp">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.4"
+            android:gravity="center_vertical"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvCity"
+                style="@style/TextStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:maxLines="2"
+                android:text="@{itemViewModel.cityItem.city}"
+                android:textSize="@dimen/text_medium"
+                android:textStyle="bold"
+                tools:text="Comodoro Rivadavia-Rada Tilly" />
+
+            <TextView
+                android:id="@+id/tvCountry"
+                style="@style/TextStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@{itemViewModel.cityItem.country}"
+                android:textSize="@dimen/text_small"
+                tools:text="Argentina" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.6"
+            android:gravity="center_vertical"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvPopulation"
+                style="@style/TextStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="start|center_vertical"
+                android:text="@{NumberFormatUtils.formatDecimal(itemViewModel.cityItem.population)}"
+                android:textSize="@dimen/text_large"
+                android:textStyle="bold"
+                tools:text="999,999,999" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+</layout>

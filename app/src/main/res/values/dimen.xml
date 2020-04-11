@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Created By vpnhan at 10/4/2020.
+  -->
+
+<resources>
+
+    <dimen name="text_small">@dimen/_8sdp</dimen>
+    <dimen name="text_medium">@dimen/_14sdp</dimen>
+    <dimen name="text_large">@dimen/_31sdp</dimen>
+</resources>
